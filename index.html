@@ -203,39 +203,39 @@ html<!DOCTYPE html>
                                 <td>Composite Teeth Filling (Per Tooth)</td>
                                 <td>₦15,000 - ₦25,000</td>
                             </tr>
-                            <tr>
-                                <td>Root Canal Therapy (Front / Posterior)</td>
-                                <td>₦40,000 - ₦70,000</td>
-                            </tr>
-                            <tr>
-                                <td>Teeth Whitening Treatment (Laser)</td>
-                                <td>₦70,000 - ₦100,000</td>
-                            </tr>
-                            <tr>
-                                <td>Orthodontic Braces (Metal / Ceramic)</td>
-                                <td>₦400,000 - ₦800,000</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- Right Side: Booking Form Panel -->
-            <div class="form-section">
-                <form class="booking-box" id="appointmentForm" onsubmit="sendToWhatsApp(event)">
-                    <h2>Book Your Appointment</h2>
-                    
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" required placeholder="John Doe">
-                    </div>
+            <!-- Right Side: Booking Form -->
+            <form class="booking-box" id="appointmentForm" onsubmit="sendToWhatsApp(event)">
+                <h2>Book an Appointment</h2>
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="phoneNumber">Phone Number</label>
-                        <input type="tel" id="phoneNumber" required placeholder="08012345678">
-                    </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" placeholder="e.g., 08012345678" required>
+                </div>
 
+                <div class="form-group">
+                    <label for="branch">Select Preferred Branch</label>
+                    <select id="branch" required>
+                        <option value="" disabled selected>Choose a location</option>
+                        <option value="Murtala Muhammad Way (Branch 1)">29 Murtala Muhammad Way, Benin City</option>
+                        <option value="Uselu (Branch 2)">127 Uselu (Success Pharmacy), Benin City</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="branch">Preferred Branch</label>
-                        <select id="branch" required>
-                            <option value="" disabled selected>Select branch location</option>
+                        <label for="bookingDate">Preferred Date</label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingType">Booking Channel</label>
+                        <select id="bookingType" onchange="updateBookingFee()" required>
