@@ -55,7 +55,6 @@ html<!DOCTYPE html>
         }
         .card h3 { color: var(--primary-color); margin-bottom: 15px; }
         
-        /* Two-Column Workspace Layout */
         .workspace-layout {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
@@ -64,7 +63,6 @@ html<!DOCTYPE html>
             margin-bottom: 40px;
         }
 
-        /* Price List Panel Styling */
         .table-section {
             background: var(--white);
             padding: 25px;
@@ -87,7 +85,6 @@ html<!DOCTYPE html>
         tr:hover { background-color: var(--secondary-color); }
         .free { color: var(--free-badge); font-weight: bold; }
 
-        /* Booking Form Small Box Panel Styling */
         form.booking-box { 
             background: var(--white); 
             padding: 22px; 
@@ -114,7 +111,6 @@ html<!DOCTYPE html>
             box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.15);
         }
         
-        /* WhatsApp Theme Submit Button */
         button.whatsapp-btn { 
             background: var(--whatsapp-color); 
             color: var(--white); 
@@ -136,7 +132,6 @@ html<!DOCTYPE html>
         
         footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 25px 0; margin-top: 50px; font-size: 0.9rem; opacity: 0.95; }
 
-        /* Responsive Breakpoint for Mobile and Tablets */
         @media (max-width: 850px) {
             .workspace-layout { grid-template-columns: 1fr; gap: 30px; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
@@ -205,38 +200,42 @@ html<!DOCTYPE html>
                                 <td>₦45,000 - ₦75,000</td>
                             </tr>
                             <tr>
-                                <td>Composite (Tooth-Colored) Filling</td>
-                                <td>₦12,000 - ₦20,000</td>
+                                <td>Composite Teeth Filling (Per Tooth)</td>
+                                <td>₦15,000 - ₦25,000</td>
                             </tr>
                             <tr>
-                                <td>Root Canal Therapy (Front Tooth)</td>
-                                <td>₦50,000 - ₦70,000</td>
+                                <td>Root Canal Therapy (Front / Posterior)</td>
+                                <td>₦40,000 - ₦70,000</td>
                             </tr>
                             <tr>
-                                <td>Root Canal Therapy (Molar Tooth)</td>
-                                <td>₦75,000 - ₦110,000</td>
+                                <td>Teeth Whitening Treatment (Laser)</td>
+                                <td>₦70,000 - ₦100,000</td>
                             </tr>
                             <tr>
-                                <td>Teeth Whitening Treatment (In-Office)</td>
-                                <td>₦70,000 - ₦95,000</td>
-                            </tr>
-                            <tr>
-                                <td>Orthodontic Assessment (Braces Consultation)</td>
-                                <td>₦5,000</td>
-                            </tr>
-                            <tr>
-                                <td>Craniofacial/Maxillofacial Consultation Specialist</td>
-                                <td>₦10,000</td>
+                                <td>Orthodontic Braces (Metal / Ceramic)</td>
+                                <td>₦400,000 - ₦800,000</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- Right Side: Small Box Appointment Booking Form -->
-            <form class="booking-box" id="appointmentForm">
-                <h2 style="font-size: 1.15rem; margin-bottom: 15px; border-bottom: 2px solid var(--secondary-color); padding-bottom: 6px;">Quick Appointment</h2>
-                
-                <!-- Patient Name Input Field -->
-                <div class="form-group">
-                    <label for="patientName">Full Name</label>
+            <!-- Right Side: Booking Form Panel -->
+            <div class="form-section">
+                <form class="booking-box" id="appointmentForm" onsubmit="sendToWhatsApp(event)">
+                    <h2>Book Your Appointment</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" required placeholder="08012345678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="branch">Preferred Branch</label>
+                        <select id="branch" required>
+                            <option value="" disabled selected>Select branch location</option>
