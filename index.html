@@ -43,7 +43,7 @@ html<!DOCTYPE html>
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             border-left: 5px solid var(--accent-color);
         }
-        h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.6rem; }
+        h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.4rem; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px; }
         .card { 
@@ -55,23 +55,32 @@ html<!DOCTYPE html>
         }
         .card h3 { color: var(--primary-color); margin-bottom: 15px; }
         
-        /* Reduced Table Container Sizing */
+        /* New Layout Grid for Side-by-Side View */
+        .workspace-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 25px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
         .table-section {
-            max-width: 650px;
-            margin: 0 auto 40px auto;
-        }
-        .table-section h2 {
-            text-align: center;
-        }
-        .table-container { 
-            background: var(--white); 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid rgba(15, 76, 92, 0.06);
         }
+
+        .table-container { 
+            border-radius: 8px; 
+            overflow: hidden; 
+            border: 1px solid #edf2f7;
+        }
+
+        /* Compact Table Sizing & Font Reduction */
         table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 10px 16px; border-bottom: 1px solid #edf2f7; font-size: 0.95rem; }
+        th, td { padding: 8px 12px; border-bottom: 1px solid #edf2f7; font-size: 0.8rem; }
         th { background: var(--primary-gradient); color: var(--white); font-weight: 600; }
         tr:hover { background-color: var(--secondary-color); }
         .free { color: var(--free-badge); font-weight: bold; }
@@ -79,21 +88,21 @@ html<!DOCTYPE html>
         /* Form Styling */
         form { 
             background: var(--white); 
-            padding: 35px; 
+            padding: 25px; 
             border-radius: 12px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
             border: 1px solid rgba(15, 76, 92, 0.06);
         }
-        .form-group { margin-bottom: 20px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-color); }
+        .form-group { margin-bottom: 15px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--primary-color); font-size: 0.9rem; }
         input, select { 
             width: 100%; 
-            padding: 12px; 
+            padding: 10px; 
             border: 1px solid #d8e2dc; 
             border-radius: 6px; 
             background-color: #fafbfc;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
         input:focus, select:focus { 
@@ -106,28 +115,28 @@ html<!DOCTYPE html>
         /* Custom Dropdown Styling */
         .dropdown-wrapper { position: relative; }
         .dropdown-btn { 
-            width: 100%; padding: 12px; border: 1px solid #d8e2dc; border-radius: 6px; 
-            background-color: #fafbfc; text-align: left; cursor: pointer; font-size: 1rem;
+            width: 100%; padding: 10px; border: 1px solid #d8e2dc; border-radius: 6px; 
+            background-color: #fafbfc; text-align: left; cursor: pointer; font-size: 0.95rem;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .dropdown-btn::after { content: '▼'; font-size: 0.8rem; color: var(--primary-color); }
+        .dropdown-btn::after { content: '▼'; font-size: 0.7rem; color: var(--primary-color); }
         .dropdown-content { 
             display: none; position: absolute; width: 100%; background: var(--white); 
             border: 1px solid #d8e2dc; border-radius: 6px; max-height: 250px; overflow-y: auto; 
             z-index: 10; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-top: 5px;
         }
-        .checkbox-item { display: flex; align-items: center; padding: 10px 15px; border-bottom: 1px solid #edf2f7; cursor: pointer; }
+        .checkbox-item { display: flex; align-items: center; padding: 10px 15px; border-bottom: 1px solid #edf2f7; cursor: pointer; font-size: 0.9rem; }
         .checkbox-item:hover { background: var(--secondary-color); }
         .checkbox-item input { width: auto; margin-right: 12px; transform: scale(1.1); cursor: pointer; }
         
         .total-box { 
             background: var(--secondary-color); 
-            padding: 20px; 
+            padding: 15px; 
             border-radius: 8px; 
-            font-size: 1.3rem; 
+            font-size: 1.2rem; 
             font-weight: bold; 
             color: var(--primary-color); 
-            margin-top: 25px; 
+            margin-top: 20px; 
             text-align: center; 
             border: 1px dashed var(--primary-color);
         }
@@ -137,13 +146,13 @@ html<!DOCTYPE html>
             background: var(--whatsapp-color); 
             color: var(--white); 
             border: none; 
-            padding: 15px 20px; 
+            padding: 12px 20px; 
             width: 100%; 
             border-radius: 6px; 
-            font-size: 1.1rem; 
+            font-size: 1.05rem; 
             cursor: pointer; 
             font-weight: bold; 
-            margin-top: 20px; 
+            margin-top: 15px; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,7 +163,9 @@ html<!DOCTYPE html>
         
         footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 25px 0; margin-top: 50px; font-size: 0.9rem; opacity: 0.95; }
 
-        @media (max-width: 600px) {
+        /* Responsive Layout Adjustment for Tablets & Mobile Screens */
+        @media (max-width: 850px) {
+            .workspace-layout { grid-template-columns: 1fr; gap: 30px; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
         }
     </style>
@@ -189,51 +200,41 @@ html<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- Treatments & Pricing Table (Resized Wrapper) -->
-        <section class="table-section">
-            <h2>Our Corporate Dental Treatments & Pricing</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Treatment Service</th>
-                            <th>Price (NGN)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Dental Cleaning</td><td>₦20,000</td></tr>
-                        <tr><td>Curettage</td><td>₦20,000</td></tr>
-                        <tr><td>Mouth Odour Treatment</td><td>₦25,000</td></tr>
-                        <tr><td>GIC Filling</td><td>₦20,000</td></tr>
-                        <tr><td>Composite Filling</td><td>₦20,000</td></tr>
-                        <tr><td>Amalgam Filling</td><td>₦20,000</td></tr>
-                        <tr><td>RCT (Root Canal Therapy) - Front</td><td>₦45,000</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Form Section -->
-        <form id="bookingForm">
-            <h2>Book Your Appointment</h2>
+        <!-- Combined Side-by-Side Flex Layout Container -->
+        <div class="workspace-layout">
             
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" required placeholder="Enter your full name">
-            </div>
+            <!-- Left Side: Compact Treatment Pricing Table -->
+            <section class="table-section">
+                <h2>Our Corporate Dental Treatments & Pricing</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Treatment Service</th>
+                                <th>Price (NGN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Dental Cleaning</td><td>₦20,000</td></tr>
+                            <tr><td>Curettage</td><td>₦20,000</td></tr>
+                            <tr><td>Mouth Odour Treatment</td><td>₦25,000</td></tr>
+                            <tr><td>GIC Filling</td><td>₦20,000</td></tr>
+                            <tr><td>Composite Filling</td><td>₦20,000</td></tr>
+                            <tr><td>Amalgam Filling</td><td>₦20,000</td></tr>
+                            <tr><td>RCT (Root Canal Therapy) - Front</td><td>₦45,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-            <div class="form-group">
-                <label for="location">Preferred Location / Branch</label>
-                <select id="location" required>
-                    <option value="" disabled selected>Select a branch</option>
-                    <option value="Branch 1: 29 Murtala Muhammad Way">Branch 1: 29 Murtala Muhammad Way, Opp. MTN, Third</option>
-                    <option value="Branch 2: 127 Uselu">Branch 2: 127 Uselu, at Success Pharmacy</option>
-                </select>
-            </div>
-
-            <div class="form-row">
+            <!-- Right Side: Booking Form Component -->
+            <form id="bookingForm">
+                <h2>Book Your Appointment</h2>
+                
                 <div class="form-group">
-                    <label for="treatmentDate">Preferred Date</label>
-                    <input type="date" id="treatmentDate" required>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="Enter your full name">
                 </div>
 
+                <div class="form-group">
+                    <label for="location">Preferred Location / Branch</label>
