@@ -55,7 +55,7 @@ html<!DOCTYPE html>
         }
         .card h3 { color: var(--primary-color); margin-bottom: 15px; }
         
-        /* Fixed Side-by-Side Grid Layout Container */
+        /* Side-by-Side Flex Layout Container */
         .workspace-layout {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -76,11 +76,13 @@ html<!DOCTYPE html>
             border-radius: 8px; 
             overflow: hidden; 
             border: 1px solid #edf2f7;
+            max-height: 480px;
+            overflow-y: auto;
         }
 
         table { width: 100%; border-collapse: collapse; text-align: left; }
         th, td { padding: 8px 12px; border-bottom: 1px solid #edf2f7; font-size: 0.8rem; }
-        th { background: var(--primary-gradient); color: var(--white); font-weight: 600; }
+        th { background: var(--primary-gradient); color: var(--white); font-weight: 600; position: sticky; top: 0; z-index: 2; }
         tr:hover { background-color: var(--secondary-color); }
         .free { color: var(--free-badge); font-weight: bold; }
 
@@ -201,7 +203,7 @@ html<!DOCTYPE html>
         <!-- Combined Layout Container (Side-by-Side) -->
         <div class="workspace-layout">
             
-            <!-- Left Element: Compact Treatment Pricing Table -->
+            <!-- Left Element: Expanded Treatment Pricing Table -->
             <section class="table-section">
                 <h2>Our Corporate Dental Treatments & Pricing</h2>
                 <div class="table-container">
@@ -213,27 +215,15 @@ html<!DOCTYPE html>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Dental Cleaning</td><td>₦20,000</td></tr>
-                            <tr><td>Curettage</td><td>₦20,000</td></tr>
+                            <tr><td>General Consultation & Checkup</td><td class="free">FREE</td></tr>
+                            <tr><td>Dental Cleaning & Polishing</td><td>₦20,000</td></tr>
+                            <tr><td>Deep Scaling & Curettage</td><td>₦20,000</td></tr>
                             <tr><td>Mouth Odour Treatment</td><td>₦25,000</td></tr>
-                            <tr><td>GIC Filling</td><td>₦20,000</td></tr>
-                            <tr><td>Composite Filling</td><td>₦20,000</td></tr>
-                            <tr><td>Amalgam Filling</td><td>₦20,000</td></tr>
-                            <tr><td>RCT (Root Canal Therapy) - Front</td><td>₦45,000</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Right Element: Booking Form Component -->
-            <form id="bookingForm">
-                <h2>Book Your Appointment</h2>
-                
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" required placeholder="Enter your full name">
-                </div>
-
-                <div class="form-group">
-                    <label for="location">Preferred Location / Branch</label>
-                    <select id="location" required>
+                            <tr><td>GIC Filling (Tooth Colored)</td><td>₦20,000</td></tr>
+                            <tr><td>Composite Filling (Premium Resin)</td><td>₦20,000</td></tr>
+                            <tr><td>Amalgam Filling (Silver)</td><td>₦20,000</td></tr>
+                            <tr><td>Simple Tooth Extraction</td><td>₦15,000</td></tr>
+                            <tr><td>Surgical / Wisdom Tooth Extraction</td><td>₦45,000</td></tr>
+                            <tr><td>RCT (Root Canal Therapy) - Front Tooth</td><td>₦45,000</td></tr>
+                            <tr><td>RCT (Root Canal Therapy) - Posterior/Back</td><td>₦65,000</td></tr>
+                            <tr><td>Teeth Whitening (Laser/In-Office)</td><td>₦70,000</td></tr>
