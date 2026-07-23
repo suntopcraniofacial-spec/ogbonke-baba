@@ -20,88 +20,90 @@ html<!DOCTYPE html>
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { color: var(--dark-text); background-color: var(--light-bg); line-height: 1.6; }
+        body { color: var(--dark-text); background-color: var(--light-bg); line-height: 1.5; }
         
         header { 
             background: var(--primary-gradient); 
             color: var(--white); 
-            padding: 40px 20px; 
+            padding: 25px 20px; 
             text-align: center; 
             box-shadow: 0 4px 15px rgba(15, 76, 92, 0.15);
         }
-        header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
-        header p { opacity: 0.9; font-size: 1.1rem; margin-top: 5px; font-weight: 300; }
+        header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+        header p { opacity: 0.9; font-size: 1rem; margin-top: 3px; font-weight: 300; }
 
-        .container { width: 92%; max-width: 1100px; margin: auto; padding: 30px 0; }
+        .container { width: 92%; max-width: 1100px; margin: auto; padding: 20px 0; }
         
-        .hero { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 12px; 
-            text-align: center; 
-            margin-bottom: 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border-left: 5px solid var(--accent-color);
+        /* New Compact Top Info Bar Layout */
+        .top-info-bar { 
+            display: grid; 
+            grid-template-columns: 1.2fr 1fr; 
+            gap: 15px; 
+            margin-bottom: 25px;
         }
-        h2 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px; }
-        .card { 
-            background: var(--white); 
-            padding: 25px; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
-            border: 1px solid rgba(15, 76, 92, 0.06);
+        .info-strip {
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-top: 4px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .card h3 { color: var(--primary-color); margin-bottom: 15px; }
-        
+        .info-strip h3 { color: var(--primary-color); font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+        .info-strip p { font-size: 0.85rem; color: var(--dark-text); margin-bottom: 4px; }
+        .info-strip p:last-child { margin-bottom: 0; }
+        .info-strip .badge-container { display: flex; gap: 15px; margin-top: 2px; }
+        .info-strip .badge { background: var(--secondary-color); color: var(--primary-color); padding: 4px 8px; border-radius: 4px; font-weight: 600; }
+
         .workspace-layout {
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 25px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
             align-items: start;
-            margin-bottom: 40px;
         }
 
         .table-section {
             background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid rgba(15, 76, 92, 0.06);
         }
+        .table-section h2, form.booking-box h2 { color: var(--primary-color); margin-bottom: 12px; font-size: 1.15rem; }
 
         .table-container { 
-            border-radius: 8px; 
+            border-radius: 6px; 
             overflow: hidden; 
             border: 1px solid #edf2f7;
-            max-height: 520px;
+            max-height: 440px;
             overflow-y: auto;
         }
 
         table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 12px 14px; border-bottom: 1px solid #edf2f7; font-size: 0.85rem; }
+        th, td { padding: 10px 12px; border-bottom: 1px solid #edf2f7; font-size: 0.82rem; }
         th { background: var(--primary-gradient); color: var(--white); font-weight: 600; position: sticky; top: 0; z-index: 2; }
         tr:hover { background-color: var(--secondary-color); }
         .free { color: var(--free-badge); font-weight: bold; }
 
         form.booking-box { 
             background: var(--white); 
-            padding: 22px; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
             border: 1px solid rgba(15, 76, 92, 0.06);
         }
-        .form-group { margin-bottom: 14px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-        label { display: block; margin-bottom: 4px; font-weight: 600; color: var(--primary-color); font-size: 0.85rem; }
+        .form-group { margin-bottom: 10px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        label { display: block; margin-bottom: 3px; font-weight: 600; color: var(--primary-color); font-size: 0.8rem; }
         input, select { 
             width: 100%; 
-            padding: 10px; 
+            padding: 8px 10px; 
             border: 1px solid #d8e2dc; 
             border-radius: 6px; 
             background-color: #fafbfc;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
         }
         input:focus, select:focus { 
@@ -115,25 +117,26 @@ html<!DOCTYPE html>
             background: var(--whatsapp-color); 
             color: var(--white); 
             border: none; 
-            padding: 12px 15px; 
+            padding: 10px 15px; 
             width: 100%; 
             border-radius: 6px; 
-            font-size: 1rem; 
+            font-size: 0.95rem; 
             cursor: pointer; 
             font-weight: bold; 
-            margin-top: 15px; 
+            margin-top: 10px; 
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             transition: background 0.2s ease;
         }
         button.whatsapp-btn:hover { background: var(--whatsapp-hover); }
         
-        footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 25px 0; margin-top: 50px; font-size: 0.9rem; opacity: 0.95; }
+        footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 15px 0; margin-top: 35px; font-size: 0.85rem; opacity: 0.95; }
 
         @media (max-width: 850px) {
-            .workspace-layout { grid-template-columns: 1fr; gap: 30px; }
+            .top-info-bar { grid-template-columns: 1fr; gap: 12px; }
+            .workspace-layout { grid-template-columns: 1fr; gap: 20px; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
         }
     </style>
@@ -142,29 +145,25 @@ html<!DOCTYPE html>
 
     <header>
         <h1>Suntop Craniofacial and Dental Hospital</h1>
-        <p>Your Smile, Our Pride</p>
+        <p>Your Smile, Our Pride • Benin City</p>
     </header>
 
     <div class="container">
         
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2>Welcome to Suntop Dental</h2>
-            <p>Providing advanced craniofacial and dental treatment solutions with cutting-edge medical technologies in Benin City.</p>
-        </section>
-
-        <!-- Locations & Info Grid -->
-        <div class="grid">
-            <div class="card">
-                <h3>Our Locations</h3>
-                <p>📍 <strong>Branch 1:</strong> 29 Murtala Muhammad Way, Opp. MTN, Third, Benin City.</p>
-                <p style="margin-top: 12px;">📍 <strong>Branch 2:</strong> 127 Uselu, at Success Pharmacy, Benin City.</p>
+        <!-- Topmost Compact Info Bar (Replaces Hero and Grid) -->
+        <div class="top-info-bar">
+            <div class="info-strip">
+                <h3>📍 Our Locations</h3>
+                <p><strong>Branch 1:</strong> 29 Murtala Muhammad Way, Opp. MTN, Third, Benin City.</p>
+                <p><strong>Branch 2:</strong> 127 Uselu, at Success Pharmacy, Benin City.</p>
             </div>
-            <div class="card">
-                <h3>Booking Options</h3>
-                <p>📅 <strong>Online Booking:</strong> ₦3,000</p>
-                <p>🏥 <strong>In-Clinic Booking:</strong> ₦5,000</p>
-                <p style="margin-top: 12px; font-size: 0.85rem; color: #666; font-style: italic;">*Select details below. Final summary submits directly to our operational line via WhatsApp.</p>
+            <div class="info-strip">
+                <h3>📅 Appointment Fees</h3>
+                <div class="badge-container">
+                    <div class="badge">Online: ₦3,000</div>
+                    <div class="badge">In-Clinic: ₦5,000</div>
+                </div>
+                <p style="margin-top: 6px; font-size: 0.75rem; color: #666; font-style: italic;">*Submits straight to our line via WhatsApp.</p>
             </div>
         </div>
 
@@ -210,7 +209,7 @@ html<!DOCTYPE html>
 
             <!-- Right Side: Booking Form -->
             <form class="booking-box" id="appointmentForm" onsubmit="sendToWhatsApp(event)">
-                <h2>Book an Appointment</h2>
+                <h2>Book Appointment</h2>
                 
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
@@ -226,8 +225,8 @@ html<!DOCTYPE html>
                     <label for="branch">Select Preferred Branch</label>
                     <select id="branch" required>
                         <option value="" disabled selected>Choose a location</option>
-                        <option value="Murtala Muhammad Way (Branch 1)">29 Murtala Muhammad Way, Benin City</option>
-                        <option value="Uselu (Branch 2)">127 Uselu (Success Pharmacy), Benin City</option>
+                        <option value="Murtala Muhammad Way (Branch 1)">29 Murtala Muhammad Way</option>
+                        <option value="Uselu (Branch 2)">127 Uselu (Success Pharmacy)</option>
                     </select>
                 </div>
 
@@ -238,4 +237,3 @@ html<!DOCTYPE html>
                     </div>
                     <div class="form-group">
                         <label for="bookingType">Booking Channel</label>
-                        <select id="bookingType" onchange="updateBookingFee()" required>
