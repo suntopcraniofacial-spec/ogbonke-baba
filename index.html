@@ -55,16 +55,23 @@ html<!DOCTYPE html>
         }
         .card h3 { color: var(--primary-color); margin-bottom: 15px; }
         
+        /* Reduced Table Container Sizing */
+        .table-section {
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+        .table-section h2 {
+            text-align: center;
+        }
         .table-container { 
             background: var(--white); 
             border-radius: 12px; 
             overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
-            margin-bottom: 40px; 
             border: 1px solid rgba(15, 76, 92, 0.06);
         }
         table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 14px 20px; border-bottom: 1px solid #edf2f7; }
+        th, td { padding: 10px 16px; border-bottom: 1px solid #edf2f7; font-size: 0.95rem; }
         th { background: var(--primary-gradient); color: var(--white); font-weight: 600; }
         tr:hover { background-color: var(--secondary-color); }
         .free { color: var(--free-badge); font-weight: bold; }
@@ -182,8 +189,8 @@ html<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- Treatments & Pricing Table -->
-        <section style="margin-bottom: 40px;">
+        <!-- Treatments & Pricing Table (Resized Wrapper) -->
+        <section class="table-section">
             <h2>Our Corporate Dental Treatments & Pricing</h2>
             <div class="table-container">
                 <table>
@@ -229,9 +236,4 @@ html<!DOCTYPE html>
                     <label for="treatmentDate">Preferred Date</label>
                     <input type="date" id="treatmentDate" required>
                 </div>
-                <div class="form-group">
-                    <label for="treatmentTime">Preferred Time</label>
-                    <input type="time" id="treatmentTime" required>
-                </div>
-            </div>
 
